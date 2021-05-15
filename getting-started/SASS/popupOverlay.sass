@@ -1,0 +1,18 @@
+@use 'variables' as v
+
+@keyframes blurFade
+    0%
+        backdrop-filter: blur(0px)
+        background: transparent !important
+    100%
+        backdrop-filter: blur(v.$blur)
+        background: #ffffffbf !important
+    
+.vx-overlay
+    // opacity: 0
+    // background-color: transparent !important
+    backdrop-filter: blur(v.$blur)
+    background: #ffffffbf !important
+    animation: 1s blurFade
+.vx-account-modal
+    border-radius: v.$borderRad !important

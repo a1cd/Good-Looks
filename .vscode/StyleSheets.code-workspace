@@ -1,0 +1,41 @@
+{
+	"folders": [
+		{
+			"path": "../"
+		}
+	],
+	"settings": {
+		"[json]": {
+			"files.trimFinalNewlines": true,
+			"editor.autoClosingBrackets": "always",
+			"editor.quickSuggestions": {
+				"strings": true
+			},
+			"editor.suggest.insertMode": "replace",
+			"gitlens.codeLens.scopes": [
+				"document"
+			]
+		},
+		"[sass]": {
+			"breadcrumbs.showFiles": true,
+			"editor.formatOnPaste": true,
+		},
+		"compile-hero.sass-output-directory": "../C/css",
+		"compile-hero.scss-output-directory": "../C/css",
+		"compile-hero.stylus-output-toggle": false,
+		"compile-hero.typescript-output-directory": "../C/ts",
+		"compile-hero.typescriptx-output-directory": "../C/tsx",
+		"compile-hero.javascript-output-directory": "../C/js",
+		"compile-hero.generate-minified-javascript": false,
+		"compile-hero.generate-minified-css": true,
+		"compile-hero.generate-minified-html": false,
+		"compile-hero.disable-compile-files-on-did-save-code": false,
+		"compile-hero.scss-output-toggle": false,
+		"compile-hero.generate-minified-css-only": false,
+		"compile-hero.generate-minified-javascript-only": false,
+		"css.styleSheets": [
+			"./SASS/index.sass"
+		],
+		"color-highlight.markerType": ""
+	}
+}

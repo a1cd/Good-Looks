@@ -1,0 +1,224 @@
+@use 'variables' as *
+@import popupOverlay
+
+@media screen and ( max-width: 500px )
+    $Grad3: linear-gradient(60deg, #3ac1ff, #ffae00)
+
+@function Sum($numbers)
+    $currentValue: 0
+    @each $numb in $numbers
+        $FixNumber: $numb * 1
+        $currentValue: $currentValue + $numb
+    @return $currentValue
+@function Average($numbers)
+    $sum: Sum($numbers)
+    $count: length($numbers)
+    @return ($sum / $count)
+@function CAverage($Colors)
+    $h: 0deg
+    $s: 0
+    $l: 0
+    @each $var in $Colors
+        $h: append($h, hue($var))
+        $s: append($s, saturation($var))
+        $l: append($l, lightness($var))
+    $hue: Average($h)
+    $sat: Average($s)
+    $lig: Average($l)
+    @return hsl($hue, $sat, $lig)
+
+@mixin BlurBackground($color: null, $Blur: $blur, $fade: 0.7)
+    $realFade: ($fade * -1) + 1
+    @if $color != null
+        background: fade-out($color, $realFade) !important
+    -webkit-backdrop-filter: blur($Blur) 
+    backdrop-filter: blur($Blur)
+
+
+$Grad1C1: #12768a
+$Grad1C2: #b2fefa
+$Grad2C1: #0ba360
+$Grad2C2: #3cba92
+$Grad3: linear-gradient(60deg, #1ea340, #71bcee9d)
+$Grad4C1: #7d73d8
+$Grad4C2: #ff0000
+$TodayHeader: #FFF1DD
+$TodayHeaderFocus: #fffd8a
+// @media light-mode
+//     $Grad1C1: #0ed0f7
+//     $Grad1C2: #b2fefa
+//     $Grad2C1: #0ba360
+//     $Grad2C2: #3cba92
+//     $Grad3: linear-gradient(75deg, #26bec980, #0082ec80)
+//     $Grad4C1: #7d73d8
+//     $Grad4C2: #56b9a1
+//     $TodayHeader: #FFF1DD
+//     $TodayHeaderFocus: #fffd8a
+// @media dark-mode
+//     $Grad1C1: #083a44
+//     $Grad1C2: #333f3e
+//     $transparentWhite: rgba(0, 0, 0, 0.5)
+//     $Primary: #312d42
+//     $PrimaryText: #fff
+
+.full-screen-bg
+    .vx-hover-menu
+        position: absolute
+        right: 0px
+        left: auto
+        width: unset !important
+        &__hover-links-container
+            width: unset !important
+            min-height: unset !important
+    .vx-tab-bar
+        margin: 0px !important
+        margin-bottom: 0px !important
+    .detail-email
+        .vx-record-header
+            background: fade-out($Primary, 0.5)
+            backdrop-filter: blur($blur)
+        .vx-record-body, .email-body
+            background: fade-out($Primary, 0.75)
+            backdrop-filter: blur($blur)
+        &:hover
+            .vx-record-header
+                background: $Primary
+            .vx-record-body, .email-body
+                background: fade-out($Primary, 0.25)
+                backdrop-filter: blur($blur)
+    .messages
+        padding: 20px
+        width: 100%
+        // background-clip: content-box
+        @include BlurBackground($Primary, 10px, 0.75)
+        .vx-button
+            position: inherit
+    *
+        animation: 1s Load cubic-bezier(0.33, 0, 0.33, 1)
+        transition: 0.5s cubic-bezier(0.33, 0, 0.33, 1)
+    .days
+        border-radius: $borderRad
+        background-clip: border-box
+        -webkit-mask-clip: border
+        .today > .day-header
+            background: $TodayHeader
+        &:hover
+            background: fade-out($Primary, 0.1)
+            .today
+                background: fade-out($TodayHeaderFocus, 0.9)
+                .day-header
+                    background: $TodayHeaderFocus
+
+        .day-header
+            background: $Primary !important
+            color: $PrimaryText !important
+        .today > .day-header
+            background: $TodayHeader !important
+        .day:first-child > .day-header
+            border-top-left-radius: $borderRad
+        .day:last-child > .day-header
+            border-top-right-radius: $borderRad
+    .app-container
+
+        border-radius: $borderRad
+        padding-bottom: 0px !important
+        background: rgba(0, 0, 0, 0) !important
+        .screen-toolbar
+            border-radius: $bRadT !important
+        .ae-grid
+            margin: 0px !important
+            background: rgba(0, 0, 0, 0)
+            .portal-screen-region[data-screen-region="0"]
+                @include BlurBackground($Primary, 10px, 0.75)
+                border-radius: 0 0 0 $borderRad !important
+                .component-class-list-student
+                    background: fade-out($Primary, 0.4) !important
+                    &:hover
+                        background: fade-out($Primary, 0.1) !important
+            .portal-screen-region[data-screen-region="1"]
+                $color1: fade-out($Grad1C1, 0.3)
+                $color2: fade-out($Grad1C2, 0.3)
+                background-color: CAverage($color1 $color2)  /* fallback for old browsers */
+                background: -webkit-linear-gradient(50deg, $color1, $color2)  /* Chrome 10-25, Safari 5.1-6 */
+                $grad: linear-gradient(40deg, $color1, $color2) /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background: $grad
+                @include BlurBackground(null, 30px)
+                border-radius: 0 0 $borderRad 0 !important
+                .ae-grid__item
+                    .screen-component
+                        $coolGreenGradient: linear-gradient(300deg, $Grad2C1 0%, $Grad2C2 100%)
+                        .component-unread-messages-count
+                            -webkit-backdrop-filter: brightness(0.9)
+                            background: fade-out($Primary, 0.4) !important
+                            border: none
+                            &:hover
+                                -webkit-backdrop-filter: brightness(1)
+                                background: $Primary !important
+                                color: $PrimaryText !important
+                        .screen-button
+                            // color: $PrimaryText !important
+                            // background: $coolGreenGradient !important
+                        .icon-block
+                            // background: $coolGreenGradient !important
+                            // color: $PrimaryText
+                            // *
+                            //     color: $PrimaryText
+                            // .ui-2_time-clock, .ui-2_time-clock + div
+                            //     color: #0050aa
+
+                        
+            border-radius: $borderRad !important
+            .ae-grid__item > div a
+                border-radius: $borderRad !important
+                .icon
+                    background-clip: border-box
+                    border-radius: $borderRad 0 $borderRad $borderRad !important
+    .vx-nav-center__portals-button
+        background: rgba(0,0 ,0 ,0.2) !important
+        border: none !important
+        border-radius: $borderRad
+        .vx-nav-center__triangle-right
+            opacity: 0
+        .vx-nav-center__triangle-left
+            opacity: 0
+    .vx-nav
+        .nc-icon-glyph
+            transition: 0.1s cubic-bezier(0.33, 0, 0.33, 1)
+        background: $Grad3 !important
+        @include BlurBackground()
+        .vx-portal-nav
+            background: rgba(0,0 ,0 ,0.3 ) !important
+            &__item
+                a
+                    border-radius: $borderMenuRad
+                &:last-of-type > a
+                    border-radius: $borderMenuRad $borderMenuRad 0 0
+        .vx-system-nav
+            background: unset !important
+            @for $i from 1 through 10
+                &:nth-child(0n + #{$i})
+                    background: unset
+            .vx-nav-center__portal
+                // height: 0
+                background: rgba(0,0 ,0 ,0.3 )
+                &::before, &::after
+                    opacity: 0
+    .vx-account-modal
+        .vx-account-modal__header
+            $color1: fade-out($Grad4C1, 0.2)
+            $color2: fade-out($Grad4C2, 0.2)
+            background-color: CAverage($color1 $color2) !important /* fallback for old browsers */
+            background: -webkit-linear-gradient(34deg, $color1, $color2) !important
+            background: linear-gradient(34deg, $color1, $color2) !important
+            @include BlurBackground(null)
+    .component-class-list-student
+        padding: 5px
+        border-radius: $borderRad
+        background: #ffffffaa
+    .component-portal-links
+        background: transparent !important
+        & > div
+            background: $transparentWhite !important
+            border-radius: 10px
+            &:hover
+                background: fade-out(white, 0.3) !important

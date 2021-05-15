@@ -1,0 +1,26 @@
+{
+  "name": "The Looks",
+  "description": "Makes veracross look different",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": {
+      "16": "/images/get_started16.png",
+      "32": "/images/get_started32.png",
+      "48": "/images/get_started48.png",
+      "128": "/images/get_started128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://portals.veracross.com/*"], 
+      "css" : ["./C/css/index.css"]
+    }
+  ],
+  "icons": {
+    "16": "/images/get_started16.png",
+    "32": "/images/get_started32.png",
+    "48": "/images/get_started48.png",
+    "128": "/images/get_started128.png"
+  }
+}

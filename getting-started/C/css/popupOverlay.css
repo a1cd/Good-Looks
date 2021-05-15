@@ -1,0 +1,19 @@
+@keyframes blurFade {
+  0% {
+    backdrop-filter: blur(0px);
+    background: transparent !important;
+  }
+  100% {
+    backdrop-filter: blur(10px);
+    background: #ffffffbf !important;
+  }
+}
+.vx-overlay {
+  backdrop-filter: blur(10px);
+  background: #ffffffbf !important;
+  animation: 1s blurFade;
+}
+
+.vx-account-modal {
+  border-radius: 10px !important;
+}

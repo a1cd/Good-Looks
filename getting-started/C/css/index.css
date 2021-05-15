@@ -1,0 +1,232 @@
+@keyframes blurFade {
+  0% {
+    backdrop-filter: blur(0px);
+    background: transparent !important;
+  }
+  100% {
+    backdrop-filter: blur(10px);
+    background: #ffffffbf !important;
+  }
+}
+.vx-overlay {
+  backdrop-filter: blur(10px);
+  background: #ffffffbf !important;
+  animation: 1s blurFade;
+}
+
+.vx-account-modal {
+  border-radius: 10px !important;
+}
+
+.full-screen-bg .vx-hover-menu {
+  position: absolute;
+  right: 0px;
+  left: auto;
+  width: unset !important;
+}
+.full-screen-bg .vx-hover-menu__hover-links-container {
+  width: unset !important;
+  min-height: unset !important;
+}
+.full-screen-bg .vx-tab-bar {
+  margin: 0px !important;
+  margin-bottom: 0px !important;
+}
+.full-screen-bg .detail-email .vx-record-header {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+.full-screen-bg .detail-email .vx-record-body, .full-screen-bg .detail-email .email-body {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+}
+.full-screen-bg .detail-email:hover .vx-record-header {
+  background: white;
+}
+.full-screen-bg .detail-email:hover .vx-record-body, .full-screen-bg .detail-email:hover .email-body {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+}
+.full-screen-bg .messages {
+  padding: 20px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.75) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.full-screen-bg .messages .vx-button {
+  position: inherit;
+}
+.full-screen-bg * {
+  animation: 1s Load cubic-bezier(0.33, 0, 0.33, 1);
+  transition: 0.5s cubic-bezier(0.33, 0, 0.33, 1);
+}
+.full-screen-bg .days {
+  border-radius: 10px;
+  background-clip: border-box;
+  -webkit-mask-clip: border;
+}
+.full-screen-bg .days .today > .day-header {
+  background: #FFF1DD;
+}
+.full-screen-bg .days:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+.full-screen-bg .days:hover .today {
+  background: rgba(255, 253, 138, 0.1);
+}
+.full-screen-bg .days:hover .today .day-header {
+  background: #fffd8a;
+}
+.full-screen-bg .days .day-header {
+  background: white !important;
+  color: black !important;
+}
+.full-screen-bg .days .today > .day-header {
+  background: #FFF1DD !important;
+}
+.full-screen-bg .days .day:first-child > .day-header {
+  border-top-left-radius: 10px;
+}
+.full-screen-bg .days .day:last-child > .day-header {
+  border-top-right-radius: 10px;
+}
+.full-screen-bg .app-container {
+  border-radius: 10px;
+  padding-bottom: 0px !important;
+  background: rgba(0, 0, 0, 0) !important;
+}
+.full-screen-bg .app-container .screen-toolbar {
+  border-radius: 10px 10px 0px 0px !important;
+}
+.full-screen-bg .app-container .ae-grid {
+  margin: 0px !important;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 10px !important;
+}
+.full-screen-bg .app-container .ae-grid .portal-screen-region[data-screen-region="0"] {
+  background: rgba(255, 255, 255, 0.75) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 0 0 0 10px !important;
+}
+.full-screen-bg .app-container .ae-grid .portal-screen-region[data-screen-region="0"] .component-class-list-student {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+.full-screen-bg .app-container .ae-grid .portal-screen-region[data-screen-region="0"] .component-class-list-student:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+.full-screen-bg .app-container .ae-grid .portal-screen-region[data-screen-region="1"] {
+  background-color: #299b2d;
+  background: -webkit-linear-gradient(50deg, rgba(18, 118, 138, 0.7), rgba(178, 254, 250, 0.7));
+  background: linear-gradient(40deg, rgba(18, 118, 138, 0.7), rgba(178, 254, 250, 0.7));
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  border-radius: 0 0 10px 0 !important;
+}
+.full-screen-bg .app-container .ae-grid .portal-screen-region[data-screen-region="1"] .ae-grid__item .screen-component .component-unread-messages-count {
+  -webkit-backdrop-filter: brightness(0.9);
+  background: rgba(255, 255, 255, 0.6) !important;
+  border: none;
+}
+.full-screen-bg .app-container .ae-grid .portal-screen-region[data-screen-region="1"] .ae-grid__item .screen-component .component-unread-messages-count:hover {
+  -webkit-backdrop-filter: brightness(1);
+  background: white !important;
+  color: black !important;
+}
+.full-screen-bg .app-container .ae-grid .ae-grid__item > div a {
+  border-radius: 10px !important;
+}
+.full-screen-bg .app-container .ae-grid .ae-grid__item > div a .icon {
+  background-clip: border-box;
+  border-radius: 10px 0 10px 10px !important;
+}
+.full-screen-bg .vx-nav-center__portals-button {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border: none !important;
+  border-radius: 10px;
+}
+.full-screen-bg .vx-nav-center__portals-button .vx-nav-center__triangle-right {
+  opacity: 0;
+}
+.full-screen-bg .vx-nav-center__portals-button .vx-nav-center__triangle-left {
+  opacity: 0;
+}
+.full-screen-bg .vx-nav {
+  background: linear-gradient(60deg, #1ea340, #71bcee9d) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.full-screen-bg .vx-nav .nc-icon-glyph {
+  transition: 0.1s cubic-bezier(0.33, 0, 0.33, 1);
+}
+.full-screen-bg .vx-nav .vx-portal-nav {
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+.full-screen-bg .vx-nav .vx-portal-nav__item a {
+  border-radius: 30px;
+}
+.full-screen-bg .vx-nav .vx-portal-nav__item:last-of-type > a {
+  border-radius: 30px 30px 0 0;
+}
+.full-screen-bg .vx-nav .vx-system-nav {
+  background: unset !important;
+}
+.full-screen-bg .vx-nav .vx-system-nav:nth-child(0n+1) {
+  background: unset;
+}
+.full-screen-bg .vx-nav .vx-system-nav:nth-child(0n+2) {
+  background: unset;
+}
+.full-screen-bg .vx-nav .vx-system-nav:nth-child(0n+3) {
+  background: unset;
+}
+.full-screen-bg .vx-nav .vx-system-nav:nth-child(0n+4) {
+  background: unset;
+}
+.full-screen-bg .vx-nav .vx-system-nav:nth-child(0n+5) {
+  background: unset;
+}
+.full-screen-bg .vx-nav .vx-system-nav:nth-child(0n+6) {
+  background: unset;
+}
+.full-screen-bg .vx-nav .vx-system-nav:nth-child(0n+7) {
+  background: unset;
+}
+.full-screen-bg .vx-nav .vx-system-nav:nth-child(0n+8) {
+  background: unset;
+}
+.full-screen-bg .vx-nav .vx-system-nav:nth-child(0n+9) {
+  background: unset;
+}
+.full-screen-bg .vx-nav .vx-system-nav:nth-child(0n+10) {
+  background: unset;
+}
+.full-screen-bg .vx-nav .vx-system-nav .vx-nav-center__portal {
+  background: rgba(0, 0, 0, 0.3);
+}
+.full-screen-bg .vx-nav .vx-system-nav .vx-nav-center__portal::before, .full-screen-bg .vx-nav .vx-system-nav .vx-nav-center__portal::after {
+  opacity: 0;
+}
+.full-screen-bg .vx-account-modal .vx-account-modal__header {
+  background-color: #6f952f !important;
+  background: -webkit-linear-gradient(34deg, rgba(125, 115, 216, 0.8), rgba(255, 0, 0, 0.8)) !important;
+  background: linear-gradient(34deg, rgba(125, 115, 216, 0.8), rgba(255, 0, 0, 0.8)) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.full-screen-bg .component-class-list-student {
+  padding: 5px;
+  border-radius: 10px;
+  background: #ffffffaa;
+}
+.full-screen-bg .component-portal-links {
+  background: transparent !important;
+}
+.full-screen-bg .component-portal-links > div {
+  background: rgba(255, 255, 255, 0.5) !important;
+  border-radius: 10px;
+}
+.full-screen-bg .component-portal-links > div:hover {
+  background: rgba(255, 255, 255, 0.7) !important;
+}
